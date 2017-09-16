@@ -1,0 +1,12 @@
+{
+  "apps" : [{
+    "name"        : "uccx-chat-connector",
+    "script"      : "./src/index.js",
+    "watch"       : ["./src/*", "./src/routes", "./src/modules"],
+    "node-args"   : "--debug",
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "log_date_format" : "YYYY-MM-DD HH:mm Z"
+  }]
+}
