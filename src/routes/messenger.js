@@ -13,7 +13,7 @@ var qs = {
  extensionField_PhoneNumber: '',
  extensionField_AddressLine1: '',
  extensionField_Model: '',
- extensionField_ccxqueuetag: 'Chat_Csq27',
+ extensionField_ccxqueuetag: process.env.CSQ,
  author: 'Customer',
  title: 'Facebook Messenger',
 };

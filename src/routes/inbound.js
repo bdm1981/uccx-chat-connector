@@ -4,12 +4,6 @@ var request = require('request');
 var chat = require('../modules/chat');
 require('dotenv').config();
 
-router.get('/', function(req, res){
-  console.log('request received');
-  //res.sendStatus(200);
-  res.render('chatform', {title: 'Webchat form', message: 'hello world!'});
-});
-
 router.post('/submit', function(req, res){
   chat.Submit(req.body)
   .then(function(uccxCookie){

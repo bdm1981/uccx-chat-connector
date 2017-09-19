@@ -1,5 +1,4 @@
 var express = require('express');
-var pug = require('pug');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 require('dotenv').config();
@@ -10,10 +9,6 @@ var inbound = require('./routes/inbound');
 var messenger = require('./routes/messenger');
 
 var app = express();
-
-// Pug Setup
-app.set('views', './src/views');
-app.set('view engine', 'pug');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -47,5 +42,5 @@ app.use(function(err, req, res, next) {
 
 
 app.listen(process.env.PORT, function () {
-  console.log(`Example app listening on port ${process.env.PORT}!`)
+  console.log(`UCCX Connector listening on port ${process.env.PORT}!`)
 });
