@@ -15,7 +15,7 @@ var chat = module.exports = {
       request({
         jar: j,
         method: 'GET',
-        url: `${process.env.UCCX}/ccp/chat/${process.env.UCCXFORM}/redirect`,
+        url: `${process.env.SM}/ccp/chat/${process.env.UCCXFORM}/redirect`,
         headers: {
           connection: 'keep-alive',
           'upgrade-insecure-requests': '1',
@@ -40,11 +40,11 @@ var chat = module.exports = {
       request({
         jar: j,
         method: 'GET',
-        url: `${process.env.UCCX}/ccp/chat?eventid=${params.qs}`,
+        url: `${process.env.SM}/ccp/chat?eventid=${params.qs}`,
         headers: {
           connection: 'keep-alive',
           'x-requested-with': 'XMLHttpRequest',
-          referer: `${process.env.UCCX}/ccp/ui/chat.jsp`,
+          referer: `${process.env.SM}/ccp/ui/chat.jsp`,
           accept: 'application/xml, text/xml, */*; q=0.01',
           'content-type': 'application/xml; charset=utf-8',
           'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
@@ -69,11 +69,11 @@ var chat = module.exports = {
     return new Promise(function(resolve, reject){
       request({
         method: 'PUT',
-        url: `${process.env.UCCX}/ccp/chat`,
+        url: `${process.env.SM}/ccp/chat`,
         headers: {
           connection: 'keep-alive',
           'x-requested-with': 'XMLHttpRequest',
-          referer: `${process.env.UCCX}/ccp/ui/chat.jsp`,
+          referer: `${process.env.SM}/ccp/ui/chat.jsp`,
           accept: 'application/xml, text/xml, */*; q=0.01',
           'content-type': 'application/xml; charset=utf-8',
           'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
@@ -204,7 +204,6 @@ var parseEvent = function(event, x){
     }
 
     // Handling typing indicators
-    var indicator;
     if(Array.isArray(event.chatEvents.TypingEvent)){
       var eventIndex = event.chatEvents.TypingEvent.length - 1;
       if(chat.sessions[x].TypingEventID != event.chatEvents.TypingEvent[eventIndex].id){
@@ -275,7 +274,7 @@ function poll(i){
         // console.log(`INDEX: ${x}`);
         console.log(`Step 1: ${chat.sessions[x].uccxSession} index ${x}`);
         chat.Events({
-          server: process.env.UCCX,
+          server: process.env.SM,
           uccxSession: chat.sessions[x].uccxSession,
           qs: chat.sessions[x].MessageEventID
         })

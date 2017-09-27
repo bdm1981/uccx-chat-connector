@@ -17,7 +17,7 @@ router.post('/submit', function(req, res){
       MessageEventID: 1
     });
     return chat.Events({
-      server: process.env.UCCX,
+      server: process.env.SM,
       uccxSession: uccxCookie,
       qs: `0&all=true&${Date.now()}`
     });
