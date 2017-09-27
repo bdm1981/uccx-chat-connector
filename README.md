@@ -11,5 +11,7 @@ To see this connector in action click the image below.
 
 [Installation Instructions](https://github.com/bdm1981/uccx-chat-connector/wiki/Connector-Installation-and-Setup)
 
+[Installation VoD](https://www.youtube.com/playlist?list=PLWb425XEiHH3qv-gleWPqLlhC5cNjQivd) - In These video I walk through the installation and configuration process.
+
 # Support
 This code has not been tested by Cisco Product teams and is not supported by Cisco. Please do not call TAC for help with this! I will provide support on a best effor basis. If you run into a problem or have a question, please open an issue.
