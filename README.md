@@ -1,5 +1,8 @@
 ![UCCX-chat-connector](https://s3.amazonaws.com/bdm-files/uccx-chat-connector/UCCX-Facebook-Connector.png)
 ___
+#### Developed by Brad McAllister
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/bdm1981/uccx-chat-connector)
+
 With this connector customers can be routed to a Cisco contact center from Facebook Messenger! The UCCX Chat Connector is a simple NodeJS
 web application. It will need to be publicly accessible along with access to the Cisco Social Miner server.
 
