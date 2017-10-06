@@ -10,7 +10,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "security-check": "nsp check",
-    "lint": "esw ./ --color"
+    "lint": "esw ./ --color",
+    "start": "node ./index.js"
   },
   "keywords": [
     "cisco",
