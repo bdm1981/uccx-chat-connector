@@ -94,6 +94,9 @@ var chat = module.exports = {
 
   SendToFB: function(params){
     var messageData = {
+      sender: {
+        id: params.senderId
+      },
       recipient: {
         id: params.recipientId
       },
@@ -145,6 +148,7 @@ var parseEvent = function(event, x){
       if(event.apiErrors.apiError.errorType == 'notFound'){
         console.log('session timed out. removing from active session array');
         chat.SendToFB({
+          senderId: chat.sessions[x].fbSenderId,
           recipientId: chat.sessions[x].fbSession,
           messageText: process.env.TIMEOUT
         }).then(function(){
@@ -160,6 +164,7 @@ var parseEvent = function(event, x){
     }else if(event.chatEvents.StatusEvent && event.chatEvents.StatusEvent.status.length > 0 ){
       if(event.chatEvents.StatusEvent.status == 'chat_timedout_waiting_for_agent'){
         chat.SendToFB({
+          senderId: chat.sessions[x].fbSenderId,
           recipientId: chat.sessions[x].fbSession,
           messageText: process.env.NOAGENTS
         }).then(function(){
@@ -176,6 +181,7 @@ var parseEvent = function(event, x){
         console.log('Step 3');
         // notify FB user who they are connected to
         chat.SendToFB({
+          senderId: chat.sessions[x].fbSenderId,
           recipientId: chat.sessions[x].fbSession,
           messageText: process.env.CONNECTED+' '+ event.chatEvents.PresenceEvent.from
         }).then(function(){
@@ -193,6 +199,7 @@ var parseEvent = function(event, x){
         });
       }else if(event.chatEvents.PresenceEvent.status == 'left'){
         chat.SendToFB({
+          senderId: chat.sessions[x].fbSenderId,
           recipientId: chat.sessions[x].fbSession,
           messageText: event.chatEvents.PresenceEvent.from+' '+process.env.ENDCHAT
         }).then(function(){
@@ -245,6 +252,7 @@ var parseEvent = function(event, x){
 
       chat.sessions[x].MessageEventID  = event.chatEvents.MessageEvent[(i-1)].id;
       chat.SendToFB({
+        senderId: chat.sessions[x].fbSenderId,
         recipientId: chat.sessions[x].fbSession,
         messageText: message
       }).then(function(){
@@ -255,6 +263,7 @@ var parseEvent = function(event, x){
         message = urldecode(event.chatEvents.MessageEvent.body);
         chat.sessions[x].MessageEventID = event.chatEvents.MessageEvent.id;
         chat.SendToFB({
+          senderId: chat.sessions[x].fbSenderId,
           recipientId: chat.sessions[x].fbSession,
           messageText: message
         }).then(function(){

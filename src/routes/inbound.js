@@ -10,6 +10,7 @@ router.post('/submit', function(req, res){
     chat.sessions.push({
       uccxSession: uccxCookie,
       fbSession: null,
+      fbSenderId: null,
       status: 'waiting',
       holding: null,
       PresenceEvent: 1,

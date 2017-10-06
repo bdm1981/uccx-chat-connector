@@ -67,6 +67,7 @@ router.post('/', function (req, res) {
               chat.sessions.push({
                 uccxSession: uccxCookie,
                 fbSession: data.entry[0].messaging[0].sender.id,
+                fbSenderId: data.entry[0].messaging[0].recipient.id,
                 status: 'waiting',
                 holding: event.message.text,
                 PresenceEvent: 1,
@@ -82,6 +83,7 @@ router.post('/', function (req, res) {
             }).then(function(eventOutput){
               // console.log('Step 4: ', eventOutput);
               chat.SendToFB({
+                senderId: data.entry[0].messaging[0].recipient.id,
                 recipientId: data.entry[0].messaging[0].sender.id,
                 messageText: process.env.WAITING
               }).then(function(){
