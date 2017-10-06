@@ -1,7 +1,11 @@
 {
-  "name": "node-starter-project",
+  "name": "uccx-chat-connector",
   "version": "1.0.0",
-  "description": "Template for starting node projects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bdm1981/uccx-chat-connector"
+  },
+  "description": "Middleware connecting Cisco UCCX web chat to Facebook Messenge",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,8 +13,11 @@
     "lint": "esw ./ --color"
   },
   "keywords": [
-    "starter",
-    "project"
+    "cisco",
+    "uccx",
+    "facebook-messenger",
+    "webchat",
+    "omnichannel"
   ],
   "author": "Brad McAllister",
   "license": "MIT",

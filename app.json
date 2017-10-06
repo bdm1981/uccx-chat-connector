@@ -1,0 +1,48 @@
+{
+    "name": "uccx-chat-connector",
+    "description": "Middleware connecting Cisco UCCX web chat to Facebook Messenge",
+    "repository": "https://github.com/bdm1981/uccx-chat-connector",
+    "logo": "https://maxcdn.icons8.com/Color/PNG/512/Logos/heroku-512.png",
+    "keywords": [
+        "cisco",
+        "uccx",
+        "facebook-messenger",
+        "webchat",
+        "omnichannel"
+    ],
+    "env": {
+      "SM": {
+        "description": "Social Miner Public Hostname or IP address"
+      },
+      "FBTOKEN": {
+        "description": "Facebook Application Token."
+      },
+      "UCCXFORM": {
+        "description": "Social Miner webform. This seems to always be 100000",
+        "value": 100000
+      },
+      "CSQ": {
+        "description": "UCCX Web Chat CSQ"
+      },
+      "NOAGENTS": {
+        "description": "No agents available Message",
+        "value": "No Agents are currently available. Please try again later."
+      },
+      "WAITING":{
+        "description": "Looking for agents message.",
+        "value": "Please wait while we connect you to the next available agent."
+      },
+      "CONNECTED":{
+        "description": "Connected with Message.",
+        "value": "Now connected with:"
+      },
+      "ENDCHAT": {
+        "description": "End Session Message",
+        "value": "has left this chat session."
+      },
+      "TIMEOUT":{
+          "description": "Session timeout message.",
+          "value": "This session is being closed due to inactivity."
+      }
+    }
+  }
