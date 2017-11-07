@@ -2,6 +2,7 @@ var express = require('express');
 var https = require('https');
 var fs = require('fs');
 var path = require('path');
+var localtunnel = require('localtunnel');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 require('dotenv').config();
@@ -59,4 +60,11 @@ if(process.env.SECURE === '1'){
     console.log(`UCCX Connector listening on  http://localhost:${process.env.PORT}!`);
     console.log(`UCCX Connector listening on  http://localhost:${process.env.PORT}!`);
   });
+}
+
+// start localtunnel if enabled
+if(process.env.LT === '1'){
+  var tunnel = localtunnel(process.env.PORT, {subdomain: process.env.SUBDOMAIN}, function(err, tunnel){
+    console.log('Localtunnel start: '+tunnel.url);
+  }); 
 }
