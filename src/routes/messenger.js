@@ -6,13 +6,9 @@ var chat = require('../modules/chat');
 
 
 var qs = { 
- subject: 'Super4G Contact Form',
- recipient: 'facebook@dcloud.cisco.com',
- extensionField_Name: '',
+ extensionField_Name: 'Facebook Messenger',
  extensionField_Email: '',
  extensionField_PhoneNumber: '',
- extensionField_AddressLine1: '',
- extensionField_Model: '',
  extensionField_ccxqueuetag: process.env.CSQ,
  author: 'Customer',
  title: 'Facebook Messenger',
