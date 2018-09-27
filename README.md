@@ -1,5 +1,9 @@
 ![UCCX-chat-connector](https://s3.amazonaws.com/bdm-files/uccx-chat-connector/UCCX-Facebook-Connector.png)
 ___
+
+## Feature Update:
+As of UCCX 11.6.2, Facebook Messenger integration is a native feature of UCCX & Social Miner! More information can be found in the [Release Notes](https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/crs/express_11_6_2/release/guide/uccx_b_solution-release-notes-1162/uccx_b_solution-release-notes-1162_chapter_01.html#topic_38C1D514AC193B41E97211D17D346E95)
+
 #### Developed by Brad McAllister
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/bdm1981/uccx-chat-connector)
 
